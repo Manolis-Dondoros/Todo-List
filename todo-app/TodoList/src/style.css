@@ -1,6 +1,9 @@
+/* General Styles */
 body {
     background-color: bisque;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .card {
@@ -10,55 +13,58 @@ body {
     padding: 20px;
     background-color: #f8f9fa;
     text-align: center;
-    width: 60%;
+    width: 90%; /* Adjusted for mobile */
+    max-width: 600px; /* Limits width on larger screens */
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
     position: relative;
-    margin-top: 100px;
+    margin-top: 50px; /* Reduced for mobile */
 }
 
 .input-field {
     width: 100%;
-    padding: 1.25rem;
+    padding: 1rem; /* Adjusted for mobile */
     margin: 10px 0;
     border-radius: 0.5rem;
     border: 0.06rem solid #d2d2d2bf;
     background-color: #f8f9fa;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    font-size: 1rem; /* Adjusted for mobile */
 }
 
 .edit-input {
-    width: fit-content;
-    padding: 1.25rem;
+    width: 100%; /* Full width on mobile */
+    padding: 1rem; /* Adjusted for mobile */
     margin-top: -9px;
     border-radius: 0.5rem;
     border: 0.06rem solid #d2d2d2bf;
     background-color: #f8f9fa;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    font-size: 1rem; /* Adjusted for mobile */
 }
 
 .input-container {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between input and button */
+    width: 93%; /* Full width on mobile */
+    margin: 0 auto; /* Centered on mobile */
 }
 
 .btn {
     padding: 10px;
-    margin: 10px;
+    margin: 0; /* Adjusted for mobile */
     border-radius: 5px;
     border: 1px solid #f8f9fa;
     background-color: #0ea434;
-    position: relative;
     color: white;
-    width: 10%;
-}
-
-input[type="text"] {
-    color: var(--grey);
+    width: 100%; /* Full width on mobile */
+    font-size: 1rem; /* Adjusted for mobile */
 }
 
 .todo-container {
     display: flex;
     gap: 1rem;
+    align-items: center; /* Align checkbox and text */
 }
 
 ul {
@@ -71,7 +77,7 @@ li {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    padding: 1.3rem;
+    padding: 1rem; /* Adjusted for mobile */
 }
 
 #todoList p {
@@ -79,8 +85,6 @@ li {
     align-items: center;
     gap: 1rem;
     font-weight: bold;
-
-
 }
 
 #todoList .disabled {
@@ -89,7 +93,6 @@ li {
 
 .disabled {
     text-decoration: line-through;
-    display: flex;
 }
 
 input[type="checkbox"] {
@@ -102,9 +105,9 @@ input[type="checkbox"] {
 input[type="checkbox"]::before {
     content: "\2713";
     display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    font-size: 1.7rem;
+    width: 1.5rem; /* Adjusted for mobile */
+    height: 1.5rem; /* Adjusted for mobile */
+    font-size: 1.2rem; /* Adjusted for mobile */
     text-align: center;
     border: 0.06rem solid gray;
     border-radius: 50%;
@@ -112,7 +115,7 @@ input[type="checkbox"]::before {
 }
 
 input[type="checkbox"]:checked::before {
-    color: var(--white);
+    color: white;
     background-color: green;
     border: 0.06rem solid green;
     border-radius: 50%;
@@ -126,37 +129,36 @@ input[type="checkbox"]:checked::before {
     height: 2rem;
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Center items vertically */
     color: grey;
-}
-
-.counter-container p {
-    align-self: center;
+    font-size: 1rem; /* Adjusted for mobile */
 }
 
 .counter-container button {
     border: none;
     background-color: transparent;
     color: grey;
-    font-size: 1rem;
+    font-size: 1rem; /* Adjusted for mobile */
+    cursor: pointer;
 }
 
 footer {
     display: flex;
-    gap: 1.8rem;
+    gap: 1rem; /* Adjusted for mobile */
     background-color: white;
     padding: 0.8rem;
     border-radius: 0.5rem;
     width: fit-content;
-    margin: 0 auto;
+    margin: 20px auto; /* Adjusted for mobile */
+    font-size: 1rem; /* Adjusted for mobile */
 }
 
 .footer #Author {
     color: blue;
 }
 
-
 .scroll {
-    height: 600px;
+    height: 400px; /* Adjusted for mobile */
     scrollbar-width: thin;
     scrollbar-color: blue;
 }
@@ -166,10 +168,40 @@ footer {
 }
 
 .scroll::-webkit-scrollbar-thumb {
-    background-color: var(--blue);
+    background-color: blue;
     border-radius: 0.5rem;
 }
 
 .scroll::-webkit-scrollbar-track {
     display: none;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+    .card {
+        width: 85%; /* Full width on small screens */
+        margin-top: 20px; /* Reduced margin for small screens */
+        padding: 15px; /* Reduced padding for small screens */
+    }
+
+    .input-field, .edit-input {
+        padding: 0.7rem; /* Smaller padding for small screens */
+        font-size: 0.9rem; /* Smaller font size for small screens */
+        max-width: 93%; /* Full width on small screens */
+    }
+
+    .btn {
+        padding: 0.8rem; /* Smaller padding for small screens */
+        font-size: 0.9rem; /* Smaller font size for small screens */
+    }
+
+    .scroll {
+        height: 300px; /* Smaller height for small screens */
+    }
+
+    footer {
+        gap: 0.5rem; /* Smaller gap for small screens */
+        padding: 0.5rem; /* Smaller padding for small screens */
+        font-size: 0.9rem; /* Smaller font size for small screens */
+    }
 }
